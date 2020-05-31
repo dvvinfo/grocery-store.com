@@ -1716,6 +1716,13 @@ h2.typoh2{
 .pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus{
 
 }
+.img {
+	max-width: 100%;
+	height: auto;
+}
+.snipcart-thumb img {
+	max-height: 140px;
+}
 @media (max-width:768px){
 	.grid_5 {
 		padding: 0 0 1em;
