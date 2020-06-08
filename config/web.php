@@ -47,6 +47,17 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
+
+            // для отправки писем по
+
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => 'smtp.ukr.net',
+//                'username' => 'yii2_loc@ukr.net',
+//                'password' => 'password',
+//                'port' => '2525', // 465
+//                'encryption' => 'ssl', // tls
+//            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
