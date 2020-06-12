@@ -24,6 +24,10 @@ class OrderProduct extends \yii\db\ActiveRecord
     {
         return 'order_product';
     }
+    public function getOrder()
+    {
+        return $this->hasOne(Order::class, ['id' => 'order_id']);
+    }
 
     /**
      * {@inheritdoc}
