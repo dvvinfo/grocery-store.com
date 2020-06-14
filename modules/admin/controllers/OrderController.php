@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\OrderProduct;
 use Yii;
 use app\modules\admin\models\Order;
 use yii\data\ActiveDataProvider;
@@ -96,6 +97,7 @@ class OrderController extends AppAdminController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->SetFlash('success', 'Заказ обновлен');
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -113,7 +115,10 @@ class OrderController extends AppAdminController
      */
     public function actionDelete($id)
     {
+        //$this->findModel($id)->unlinkAll('orderProduct', true);
+        Yii::$app->session->SetFlash('success', 'Заказ удален');
         $this->findModel($id)->delete();
+       OrderProduct::deleteAll(['order_id' => $id]);
 
         return $this->redirect(['index']);
     }
