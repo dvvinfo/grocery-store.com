@@ -22,6 +22,10 @@ class category extends \yii\db\ActiveRecord
     {
         return 'category';
     }
+    public function getCategory()
+    {
+        return $this->hasOne(Category::class, ['id' => 'parent_id']);
+    }
 
     /**
      * {@inheritdoc}
@@ -42,10 +46,10 @@ class category extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => 'Parent ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'keywords' => 'Keywords',
+            'parent_id' => 'Родительская категория',
+            'title' => 'Наименование',
+            'description' => 'Описание',
+            'keywords' => 'Ключеаые слова',
         ];
     }
 }
