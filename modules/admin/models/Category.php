@@ -13,7 +13,7 @@ use Yii;
  * @property string|null $description
  * @property string|null $keywords
  */
-class category extends \yii\db\ActiveRecord
+class Category extends yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}

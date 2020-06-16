@@ -15,7 +15,7 @@ use Yii;
  * @property int $qty
  * @property float $total
  */
-class OrderProduct extends \yii\db\ActiveRecord
+class OrderProduct extends yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}

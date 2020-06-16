@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                <?= Html::a('Лобавить товар', ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Добавить товар', ['create'], ['class' => 'btn btn-success']) ?>
             </div>
             <div class="box-body">
 <div class="product-index">
@@ -43,8 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //old_price',
             //'description',
             //'keywords',
-            //'img',
-            //'is_offer',
+            'img',
+            'is_offer',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

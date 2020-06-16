@@ -18,7 +18,7 @@ use Yii;
  * @property string $img
  * @property int $is_offer
  */
-class product extends \yii\db\ActiveRecord
+class Product extends yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -61,7 +61,7 @@ class product extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'keywords' => 'Ключевые слова',
             'img' => 'Изображение',
-            'is_offer' => 'Is Offer',
+            'is_offer' => 'Акция',
         ];
     }
 }
