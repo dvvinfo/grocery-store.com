@@ -43,12 +43,7 @@
                                     <td class="invert"><?= $i ?></td>
                                     <td class="invert-image">
                                         <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $id]) ?>">
-                                            <?php
-                                            if ($item->img): ?>
-                                                <?= \yii\helpers\Html::img("@web/images/products/{$item->img}", ['alt' => $item->title]) ?>
-                                            <?php else: ?>
-                                                <?= \yii\helpers\Html::img("@web/images/products/no-image.png", ['alt' => $item->title]) ?>
-                                            <?php endif; ?>
+                                                <?= \yii\helpers\Html::img("@web/{$item['img']}", ['alt' => $item->title]) ?>
                                         </a>
                                     </td>
                                     <td class="invert">

@@ -14,12 +14,8 @@
             <?php foreach($session['cart'] as $id => $item):?>
                 <tr>
                     <td>
-                        <?php
-                        if ($item->img): ?>
-                            <?= \yii\helpers\Html::img("@web/images/products/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
-                        <?php else: ?>
-                            <?= \yii\helpers\Html::img("@web/images/products/no-image.png", ['alt' => $item['title'], 'height' => 50]) ?>
-                        <?php endif; ?>
+
+                            <?= \yii\helpers\Html::img("@web/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
                     </td>
                     <td><?= $item['title']?></td>
                     <td><?= $item['qty']?></td>
