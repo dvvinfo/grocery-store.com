@@ -43,7 +43,14 @@ $this->params['breadcrumbs'][] = $this->title;
             //old_price',
             //'description',
             //'keywords',
-            'img',
+            //'img',
+            [  'attribute' => 'img',
+                'value' => function($data) {
+                    return "/{$data->img}" ;
+
+                },
+                'format' => ['image', ['width'=> 100]],
+            ],
             'is_offer',
 
             ['class' => 'yii\grid\ActionColumn'],
