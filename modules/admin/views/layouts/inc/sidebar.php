@@ -79,6 +79,18 @@
                     <li><a href="<?=\yii\helpers\Url::to(['slider/create'])?>">Добавить слайд</a></li>
                 </ul>
             </li>
+            <!--           меню постов-->
+            <li class="treeview">
+                <a href="#"><i class="fa  fa-newspaper-o"></i> <span>Посты</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?=\yii\helpers\Url::to(['post/index'])?>">Все Посты</a></li>
+                    <li><a href="<?=\yii\helpers\Url::to(['post/create'])?>">Добавить пост</a></li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>

@@ -35,6 +35,11 @@ jQuery(document).ready(function($) {
         shadow: "0 0 5px #000"
     });
 
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
 
 });
 

@@ -26,6 +26,12 @@ ul,label{
 body a:hover{
 	text-decoration:none;
 }
+.events_bottom_left2 img {
+	max-width: 300px;
+}
+.img-1 {
+	max-width: 300px;
+}
 /*-- header --*/
 .fixed{
 	position: fixed;
@@ -1751,6 +1757,17 @@ h2.typoh2{
 .snipcart-details a.button:hover{
 	background: #84c639;
 }
+.navbar-nav > li > a:hover, .nav > li > a:focus{
+	background-color: #84C639!important;
+}
+
+
+@media (min-width: 768px) {
+    .navbar-nav > li {
+        float: none !important;
+
+    }
+}
 
 @media (max-width:768px){
 	.grid_5 {
@@ -2285,7 +2302,7 @@ ul.wmuSliderPagination {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    padding-top: .8em;
+
 }
 .events_bottom_left2 {
     padding: 0;

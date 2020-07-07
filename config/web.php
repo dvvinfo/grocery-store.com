@@ -8,7 +8,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'defaultRoute' => 'home/index',
-    'language' => 'ru',
+    'language' => 'ru-RU',
     'name' => 'Grocery Store a Ecommerce Online Shopping',
     'layout' => 'grocerry',
     'aliases' => [
@@ -24,7 +24,7 @@ $config = [
     ],
     'components' => [
         'formatter' => [
-            'datetimeFormat' => 'php:d F Y H:i:s',
+            'dateFormat' => 'php:d F Y H:i:s',
         ],
         'assetManager' => [
             'bundles' => [

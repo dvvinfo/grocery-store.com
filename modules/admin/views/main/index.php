@@ -1,6 +1,10 @@
 <?php
+
+use app\modules\admin\models\Post;
+
 $this->title = 'Статистика магазина';
 $this->params['breadcrumbs'][] = $this->title;
+$post = Post::find()->count();
 ?>
 
 <div class="row">
@@ -45,6 +49,20 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <a href="<?= \yii\helpers\Url::to(['category/index']) ?>" class="small-box-footer">
                Все категории <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-red">
+            <div class="inner">
+                <h3><?= $post ?></h3>
+                <p>Постов</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-newspaper-o"></i>
+            </div>
+            <a href="<?= \yii\helpers\Url::to(['post/index']) ?>" class="small-box-footer">
+                Все посты <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
     </div>
