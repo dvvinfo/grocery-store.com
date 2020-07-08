@@ -2287,10 +2287,11 @@ ul.wmuSliderPagination {
 }
 .events_bottom_left1_grid {
     width: 125px;
-    height: 125px;
     background:#84C639;
     text-align: center;
 	margin:0 auto;
+	height: auto;
+	padding: 5px 0;
 }
 .events_bottom_left1_grid h4 {
     font-size: 2em;
@@ -2302,7 +2303,11 @@ ul.wmuSliderPagination {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
+	margin: 0;
 
+}
+.events_bottom_left{
+	margin-bottom: 20px;
 }
 .events_bottom_left2 {
     padding: 0;

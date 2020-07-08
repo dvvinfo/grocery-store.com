@@ -1,5 +1,7 @@
 <?php use yii\helpers\Html;
+use app\modules\admin\models\Team;
 use yii\helpers\Url;
+$team = Team::find()->all();
 
 $this->beginPage() ?>
 <!DOCTYPE html>
@@ -68,47 +70,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="team">
     <div class="container">
         <h3>Meet Our Amazing Team</h3>
-        <div class="agileits_team_grids">
+        <div class="agileits_team_grids row">
+            <?php foreach ($team as $item): ?>
             <div class="col-md-3 agileits_team_grid">
-                <img src="images/32.jpg" alt=" " class="img-responsive" />
-                <h4>Martin Paul</h4>
-                <p>Manager</p>
+                <?=Html::img("@web/{$item->img}", [['alt' => $item->name, 'class'=>'img-responsive']])?>
+                <h4><?= $item['name']?> <?= $item['surname']?></h4>
+                <p><?= $item['position']?></p>
                 <ul class="agileits_social_icons agileits_social_icons_team">
-                    <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="<?= $item['faceboock']?>" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="<?= $item['twitter']?>" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="<?= $item['google']?>" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="<?= $item['instagram']?>" class="facebook"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+<!--                    <li><a href="<?= $item['vk']?>" class="twitter"><i class="fa fa-vk" aria-hidden="true"></i></a></li>-->
                 </ul>
             </div>
-            <div class="col-md-3 agileits_team_grid">
-                <img src="images/33.jpg" alt=" " class="img-responsive" />
-                <h4>Michael Rick</h4>
-                <p>Supervisor</p>
-                <ul class="agileits_social_icons agileits_social_icons_team">
-                    <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 agileits_team_grid">
-                <img src="images/34.jpg" alt=" " class="img-responsive" />
-                <h4>Thomas Carl</h4>
-                <p>Supervisor</p>
-                <ul class="agileits_social_icons agileits_social_icons_team">
-                    <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 agileits_team_grid">
-                <img src="images/35.jpg" alt=" " class="img-responsive" />
-                <h4>Laura Lee</h4>
-                <p>CEO</p>
-                <ul class="agileits_social_icons agileits_social_icons_team">
-                    <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+            <?php endforeach;?>
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -174,11 +150,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </article>
                 </div>
             </div>
-            <script src="js/jquery.wmuSlider.js"></script>
-            <script>
-                $('.example1').wmuSlider();
-            </script>
-        </div>
     </div>
 </div>
 <!-- //testimonials -->

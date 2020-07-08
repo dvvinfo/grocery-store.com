@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Post */
+/* @var $model app\modules\admin\models\Team */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Посты', 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Команда', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -15,24 +15,23 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a('Редактировать ', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
                 <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
                     'class' => 'btn btn-danger',
                     'data' => [
-                        'confirm' => 'Удалить пост?',
+                        'confirm' => 'Удалить члена команды?',
                         'method' => 'post',
                     ],
                 ]) ?>
             </div>
-            <div class="box-body">
-<div class="post-view">
+<div class="team-view">
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'title',
-            'text:ntext',
+            'name',
+            'position',
             //'img',
             [
                 'attribute' => 'img',
@@ -40,6 +39,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => ['image', ['width'=> 100]]
 
             ],
+            'faceboock',
+            'twitter',
+            'google',
+            'vk',
+            'instagram',
         ],
     ]) ?>
 

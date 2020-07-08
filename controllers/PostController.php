@@ -8,10 +8,10 @@ use app\models\Post;
 
 class PostController extends AppController
 {
-    public function actionView($id)
+    public function actionView()
     {
-        $post = Post::findOne($id);
-        return $this->render('event', compact('post'));
+        $post = Post::find();
+        return $this->render('events', ['post' => $post]);
     }
 
 }

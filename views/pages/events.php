@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <div class="col-md-4 events_bottom_left1">
                         <div class="events_bottom_left1_grid">
-                            <h4>20</h4>
+<!--                            <h4>20</h4>-->
                             <p><?php if (!empty($item['created_at'])) {
                                     echo $item['created_at'];
                                 } else {
@@ -136,8 +136,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--                        <img src="images/15.jpg" alt=" " class="img-responsive" />-->
                         <h4><?= $item['title']?></h4>
                         <ul>
-                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>3:00 PM</li>
-                            <li><i class="fa fa-user" aria-hidden="true"></i><a href="#">Admin</a></li>
+<!--                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>3:00 PM</li>-->
+<!--                            <li><i class="fa fa-user" aria-hidden="true"></i><a href="#">Admin</a></li>-->
                         </ul>
                         <p><?=$item['text']?></p>
                     </div>

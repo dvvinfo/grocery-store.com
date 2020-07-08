@@ -35,10 +35,8 @@ jQuery(document).ready(function($) {
         shadow: "0 0 5px #000"
     });
 
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
+
+
 
 
 });
@@ -69,6 +67,11 @@ paypal.minicart.cart.on('checkout', function (evt) {
         alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
         evt.preventDefault();
     }
+});
+$('.example1').wmuSlider();
+$('.counter').counterUp({
+    delay: 10,
+    time: 1000
 });
 
 /* Cart */

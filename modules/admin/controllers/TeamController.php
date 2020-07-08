@@ -3,16 +3,16 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\Post;
-use app\modules\admin\models\PostSearch;
+use app\modules\admin\models\Team;
+use yii\data\ActiveDataProvider;
 use app\modules\admin\controllers\AppAdminController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * PostController implements the CRUD actions for Post model.
+ * TeamController implements the CRUD actions for Team model.
  */
-class PostController extends AppAdminController
+class TeamController extends AppAdminController
 {
     /**
      * {@inheritdoc}
@@ -30,22 +30,22 @@ class PostController extends AppAdminController
     }
 
     /**
-     * Lists all Post models.
+     * Lists all Team models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PostSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Team::find(),
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single Post model.
+     * Displays a single Team model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class PostController extends AppAdminController
     }
 
     /**
-     * Creates a new Post model.
+     * Creates a new Team model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Post();
+        $model = new Team();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->SetFlash('success', 'Сохранено');
@@ -77,7 +77,7 @@ class PostController extends AppAdminController
     }
 
     /**
-     * Updates an existing Post model.
+     * Updates an existing Team model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +98,7 @@ class PostController extends AppAdminController
     }
 
     /**
-     * Deletes an existing Post model.
+     * Deletes an existing Team model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -107,21 +107,21 @@ class PostController extends AppAdminController
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-        Yii::$app->session->SetFlash('success', 'Пост удален');
+        Yii::$app->session->SetFlash('success', 'Удалено');
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Post model based on its primary key value.
+     * Finds the Team model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Post the loaded model
+     * @return Team the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Post::findOne($id)) !== null) {
+        if (($model = Team::findOne($id)) !== null) {
             return $model;
         }
 

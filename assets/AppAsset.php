@@ -30,10 +30,12 @@ class AppAsset extends AssetBundle
     public $js = [
         //'js/jquery-1.11.1.min.js',
         'js/bootstrap.min.js',
+        'js/jquery.wmuSlider.js',
         'js/okzoom.js',
         'js/move-top.js',
         'js/easing.js',
         'js/jquery.flexslider.js',
+
         'js/minicart.js',
         'waypoints.min.js',
         'counterup.min.js',
