@@ -1,10 +1,13 @@
 <?php
 
 use app\modules\admin\models\Post;
+use app\modules\admin\models\Testimonials;
 
 $this->title = 'Статистика магазина';
 $this->params['breadcrumbs'][] = $this->title;
 $post = Post::find()->count();
+$testimonials = Testimonials::find()->count();
+
 ?>
 
 <div class="row">
@@ -65,5 +68,17 @@ $post = Post::find()->count();
                 Все посты <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-commenting"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Отзывы</span>
+                <span class="info-box-number"><a href="<?= \yii\helpers\Url::to(['testimonials/index']) ?>" class="small-box-footer"><?= $testimonials ?></a></span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
     </div>
 </div>

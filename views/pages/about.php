@@ -1,7 +1,9 @@
-<?php use yii\helpers\Html;
+<?php use app\modules\admin\models\Testimonials;
+use yii\helpers\Html;
 use app\modules\admin\models\Team;
 use yii\helpers\Url;
 $team = Team::find()->all();
+$testimonials = Testimonials::find()->all();
 
 $this->beginPage() ?>
 <!DOCTYPE html>
@@ -97,57 +99,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="w3_testimonials_grids">
             <div class="wmuSlider example1 animated wow slideInUp" data-wow-delay=".5s">
                 <div class="wmuSliderWrapper">
+<!--                    --><?php //for ($i=0; $i <count($testimonials); $i+=2) {
+//                        $testimonials = $testimonials[$i]; $testimonials2 = $testimonials[$i+1];
+//                    }?>
+                    <?php foreach ($testimonials as $item):?>
                     <article style="position: absolute; width: 100%; opacity: 0;">
+
                         <div class="banner-wrap">
-                            <div class="col-md-6 w3_testimonials_grid">
-                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
-                                    repellat.</p>
-                                <h4>Andrew Smith <span>Customer</span></h4>
+
+                            <div class="col-md-12 w3_testimonials_grid">
+                                <p><i class="fa fa-quote-right" aria-hidden="true"></i><?= $item['text']?></p>
+                                <h4><?= $item['name']?> <?= $item['surname']?> <span><?= $item['position']?></span></h4>
                             </div>
-                            <div class="col-md-6 w3_testimonials_grid">
-                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
-                                    repellat.</p>
-                                <h4>Thomson Richard <span>Customer</span></h4>
-                            </div>
+
+<!--                            <div class="col-md-6 w3_testimonials_grid">-->
+<!--                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis-->
+<!--                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores-->
+<!--                                    repellat.</p>-->
+<!--                                <h4>John Paul <span>Customer</span></h4>-->
+<!--                            </div>-->
                             <div class="clearfix"> </div>
                         </div>
                     </article>
-                    <article style="position: absolute; width: 100%; opacity: 0;">
-                        <div class="banner-wrap">
-                            <div class="col-md-6 w3_testimonials_grid">
-                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
-                                    repellat.</p>
-                                <h4>Crisp Kale <span>Customer</span></h4>
-                            </div>
-                            <div class="col-md-6 w3_testimonials_grid">
-                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
-                                    repellat.</p>
-                                <h4>John Paul <span>Customer</span></h4>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </article>
-                    <article style="position: absolute; width: 100%; opacity: 0;">
-                        <div class="banner-wrap">
-                            <div class="col-md-6 w3_testimonials_grid">
-                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
-                                    repellat.</p>
-                                <h4>Rosy Carl <span>Customer</span></h4>
-                            </div>
-                            <div class="col-md-6 w3_testimonials_grid">
-                                <p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                    voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
-                                    repellat.</p>
-                                <h4>Rockson Doe <span>Customer</span></h4>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </article>
+                    <?php endforeach;?>
+
                 </div>
             </div>
     </div>

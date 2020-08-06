@@ -103,6 +103,18 @@
                     <li><a href="<?=\yii\helpers\Url::to(['team/create'])?>">Добавить в команду</a></li>
                 </ul>
             </li>
+            <!--           меню отзывы-->
+            <li class="treeview">
+                <a href="#"><i class="fa  fa-commenting"></i> <span>Отзывы</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?=\yii\helpers\Url::to(['testimonials/index'])?>">Список отзывов</a></li>
+                    <li><a href="<?=\yii\helpers\Url::to(['testimonials/create'])?>">Добавить отзыв</a></li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
