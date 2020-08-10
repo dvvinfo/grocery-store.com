@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\Product */
+/* @var $model app\modules\admin\models\Promo */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Товары', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Акции', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -24,28 +24,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ]) ?>
             </div>
-            <div class="box-body">
-<div class="product-view">
+<div class="promo-view">
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'category_id',
             'title',
-            'content:raw',
-            'price',
-            'old_price',
-            'description',
-            'keywords',
+            'sale',
             //'img',
             [
-                    'attribute' => 'img',
+                'attribute' => 'img',
                 'value' => "/{$model->img}",
                 'format' => ['image', ['width'=> 100]]
 
-],
-            'is_offer',
+            ],
         ],
     ]) ?>
 

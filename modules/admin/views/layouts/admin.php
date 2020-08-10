@@ -57,7 +57,7 @@ desired effect
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><b>Админка</span>
         </a>
 
         <!-- Header Navbar -->
@@ -181,7 +181,7 @@ desired effect
 <!--                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
                                 <?= \yii\helpers\Html::img("@web/images/user2-160x160.jpg", ['alt' => $user->username, 'class' => 'img-circle']) ?>
                                 <p>
-                                    <?=Yii::$app->user->identity->username?> - Web Developer
+                                    <?=Yii::$app->user->identity->username?>
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -190,7 +190,7 @@ desired effect
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+<!--                                    <a href="#" class="btn btn-default btn-flat">Profile</a>-->
                                 </div>
                                 <div class="pull-right">
                                     <a href="<?=\yii\helpers\Url::to(['auth/logout'])?>" class="btn btn-default btn-flat">Sing out</a>

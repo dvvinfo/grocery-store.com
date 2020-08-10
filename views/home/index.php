@@ -1,3 +1,6 @@
+<?php use app\modules\admin\models\Promo;
+
+$promos= Promo::find()->all();?>
 <!-- banner -->
 <div class="banner">
     <?= $this->render('//layouts/inc/sidebar') ?>
@@ -11,30 +14,16 @@
     <div class="wthree_banner_bottom_left_grid_sub">
     </div>
     <div class="wthree_banner_bottom_left_grid_sub1">
+        <?php foreach ($promos as $promo):?>
         <div class="col-md-4 wthree_banner_bottom_left">
             <div class="wthree_banner_bottom_left_grid">
-                <img src="images/4.jpg" alt=" " class="img-responsive" />
+                <?= \yii\helpers\Html::img("@web/{$promo->img}", [['alt'=> $promo->title], 'class'=> 'img-responsive'])?>
                 <div class="wthree_banner_bottom_left_grid_pos">
-                    <h4>Discount Offer <span>25%</span></h4>
+                    <h4><?= $promo->title ?> <span><?= $promo->sale ?></span></h4>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 wthree_banner_bottom_left">
-            <div class="wthree_banner_bottom_left_grid">
-                <img src="images/5.jpg" alt=" " class="img-responsive" />
-                <div class="wthree_banner_btm_pos">
-                    <h3>introducing <span>best store</span> for <i>groceries</i></h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 wthree_banner_bottom_left">
-            <div class="wthree_banner_bottom_left_grid">
-                <img src="images/6.jpg" alt=" " class="img-responsive" />
-                <div class="wthree_banner_btm_pos1">
-                    <h3>Save <span>Upto</span> $10</h3>
-                </div>
-            </div>
-        </div>
+        <?php endforeach;?>
         <div class="clearfix"> </div>
     </div>
     <div class="clearfix"> </div>

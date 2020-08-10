@@ -115,6 +115,18 @@
                     <li><a href="<?=\yii\helpers\Url::to(['testimonials/create'])?>">Добавить отзыв</a></li>
                 </ul>
             </li>
+            <!--           меню Акции-->
+            <li class="treeview">
+                <a href="#"><i class="fa  fa-file-archive-o"></i> <span>Акции</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?=\yii\helpers\Url::to(['promo/index'])?>">Все акции</a></li>
+                    <li><a href="<?=\yii\helpers\Url::to(['promo/create'])?>">Добавить акцию</a></li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
