@@ -74,6 +74,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     }
     public function generateAuthKey()
     {
+
         $this->auth_key = \Yii::$app->security->generateRandomString();
 
     }

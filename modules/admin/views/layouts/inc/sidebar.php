@@ -127,6 +127,17 @@
                     <li><a href="<?=\yii\helpers\Url::to(['promo/create'])?>">Добавить акцию</a></li>
                 </ul>
             </li>
+            <!--           меню Пользователь-->
+            <li class="treeview">
+                <a href="#"><i class="fa  fa-file-archive-o"></i> <span>Пользотель</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?=\yii\helpers\Url::to(['user/index'])?>">Инфо пользователя</a></li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>

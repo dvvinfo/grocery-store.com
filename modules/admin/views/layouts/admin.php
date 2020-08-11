@@ -1,8 +1,10 @@
 <?php
 use app\assets\AdminAsset;
+use app\modules\admin\models\User;
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+$users = User::find()->one();
 
 AdminAsset::register($this);
 
@@ -171,7 +173,7 @@ desired effect
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
 <!--                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
-                            <?= \yii\helpers\Html::img("@web/images/user2-160x160.jpg", ['alt' => $user->username, 'class' => 'user-image']) ?>
+                            <?= \yii\helpers\Html::img("@web/{$user->avatar}images/user2-160x160.jpg", ['alt' => $user->username, 'class' => 'user-image']) ?>
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs"><?=Yii::$app->user->identity->username?></span>
                         </a>
@@ -179,10 +181,10 @@ desired effect
                             <!-- The user image in the menu -->
                             <li class="user-header">
 <!--                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
-                                <?= \yii\helpers\Html::img("@web/images/user2-160x160.jpg", ['alt' => $user->username, 'class' => 'img-circle']) ?>
+                                <?= \yii\helpers\Html::img("@web/{$users->avatar}", ['alt' => $user->username, 'class' => 'img-circle']) ?>
                                 <p>
                                     <?=Yii::$app->user->identity->username?>
-                                    <small>Member since Nov. 2012</small>
+                                    <small><?=$users->name?></small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
