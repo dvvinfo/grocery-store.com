@@ -34,6 +34,7 @@ class User extends \yii\db\ActiveRecord
         return [
             [['username', 'password', 'avatar'], 'required'],
             [['username', 'password', 'auth_key', 'name'], 'string', 'max' => 255],
+            [['avatar'], 'default', 'value' => 'images/user2-160x160.jpg'],
             [['file'], 'image'],
         ];
     }
@@ -58,7 +59,7 @@ class User extends \yii\db\ActiveRecord
         if ($file = UploadedFile::getInstance($this, 'file')) {
             $dir = 'images/user/' . date("Y-m-d") . '/';
             if (!is_dir($dir)) {
-                mkdir($dir);
+                mkdir($dir, '0777', true);
             }
             $file_name = uniqid() . '_' . $file->baseName . '.' . $file->extension;
             $this->avatar = $dir . $file_name;

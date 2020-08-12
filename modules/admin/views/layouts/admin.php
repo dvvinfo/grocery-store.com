@@ -173,7 +173,7 @@ desired effect
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
 <!--                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
-                            <?= \yii\helpers\Html::img("@web/{$user->avatar}images/user2-160x160.jpg", ['alt' => $user->username, 'class' => 'user-image']) ?>
+                            <?= \yii\helpers\Html::img("@web/{$users->avatar}", ['alt' => $user->username, 'class' => 'user-image']) ?>
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs"><?=Yii::$app->user->identity->username?></span>
                         </a>

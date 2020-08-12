@@ -1,3 +1,9 @@
+<?php
+
+use app\modules\admin\models\User;
+
+$users = User::find()->one();
+?>
 <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
@@ -6,12 +12,13 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <?= \yii\helpers\Html::img("@web/{$users->avatar}", ['alt' => $user->username, 'class' => 'user-image']) ?>
             </div>
             <div class="pull-left info">
                 <p><?=Yii::$app->user->identity->username?></p>
+                <small><?=$users->name?></small>
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+<!--                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
             </div>
         </div>
 
@@ -29,7 +36,7 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">HEADER</li>
+<!--            <li class="header">HEADER</li>-->
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="<?=\yii\helpers\Url::to(['main/index'])?>"><i class="fa fa-bar-chart"></i> <span>Стaтистика магазина</span></a></li>
             <li class="treeview">

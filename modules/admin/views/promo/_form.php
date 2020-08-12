@@ -3,8 +3,6 @@
 use kartik\file\FileInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use mihaildev\ckeditor\CKEditor;
-use mihaildev\elfinder\ElFinder;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Promo */
 /* @var $form yii\widgets\ActiveForm */

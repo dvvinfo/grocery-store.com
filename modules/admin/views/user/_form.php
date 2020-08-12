@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?//= $form->field($model, 'avatar')->textInput(['maxlength' => true]) ?>
     <?php
-    echo $form->field($model, 'avatar')->widget(FileInput::class, [
+    echo $form->field($model, 'file')->widget(FileInput::class, [
         'options' => ['accept' => 'image/*'],
         'pluginOptions' => [
             'showCaption' => false,
