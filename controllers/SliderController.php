@@ -13,4 +13,8 @@ class SliderController extends AppController
         $slider = Slider::find()->all();
         return $this->render('products', compact('slider'));
     }
+    public function actionProducts()
+    {
+        return $this->render('products');
+    }
 }

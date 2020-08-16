@@ -22,4 +22,8 @@ class PagesController extends AppController
     {
         return $this->render('services');
     }
+    public function actionMail()
+    {
+        return $this->render('mail');
+    }
 }

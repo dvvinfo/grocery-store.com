@@ -4,7 +4,7 @@ use app\modules\admin\models\Slider;
 use yii\bootstrap\Carousel;
 
 $slider=Slider::find()->all();
-$url = \yii\helpers\Url::to(['slider/index'])
+$url = \yii\helpers\Url::to(['pages/products'])
 ;?>
 
 <?php //if (!empty($slider)) : ?>

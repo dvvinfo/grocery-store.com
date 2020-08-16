@@ -1,8 +1,14 @@
-<?php use app\models\Product;
+<?php
+use app\models\Product;
+use yii\data\Pagination;
 use yii\helpers\Html;
 use yii\helpers\Url;
-$offers = Product::find()->where('is_offer')->all();
-$products = Product::find()-> all();
+$products = Product::find()->all();
+$query= Product::find()->where('id');
+$pages = new Pagination(['totalCount' =>$query->count(), 'pageSize'=> 10, 'forcePageParam' => false, 'pageSizeParam' => false]);
+$products = $query->offset($pages->offset)
+    ->limit($pages->limit)
+    ->all();
 $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -42,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h3>Popular Brands</h3>
             <div class="w3ls_w3l_banner_nav_right_grid1">
                 <?php foreach ($offers as $offer) :?>
-                <div class="col-md-3 w3ls_w3l_banner_left  mb-2">
+                <div class="col-md-3 w3ls_w3l_banner_left mb-custom ">
                     <div class="hover14 column ">
                         <div class="agile_top_brand_left_grid">
                             <div class="agile_top_brand_left_grid_pos">
@@ -92,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="w3ls_w3l_banner_nav_right_grid1">
                 <h6>All Products</h6>
                 <?php foreach ($products as $product) :?>
-                    <div class="col-md-3 w3ls_w3l_banner_left  mb-2">
+                    <div class="col-md-3 w3ls_w3l_banner_left  mb-custom">
                         <div class="hover14 column ">
                             <div class="agile_top_brand_left_grid">
 
@@ -136,10 +142,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <?php endforeach;?>
 
                 <div class="clearfix"> </div>
+                <div class="col-md-12 text-center">
+                    <!--                        Вывод пагинации-->
+                    <?= \yii\widgets\LinkPager::widget([
+                        'pagination' => $pages,
+                    ])?>
+                </div>
             </div>
         </div>
     </div>
     <div class="clearfix"></div>
+
 </div>
 <!-- //banner -->
 

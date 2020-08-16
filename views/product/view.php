@@ -41,7 +41,7 @@
                 </div>
                 <div class="w3agile_description">
                     <h4>Description :</h4>
-                    <p><?= $product->content?>/p>
+                    <p><?= $product->content?></p>
                 </div>
                 <div class="snipcart-item block">
                     <div class="snipcart-thumb agileinfo_single_right_snipcart">

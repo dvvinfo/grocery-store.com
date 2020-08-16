@@ -136,13 +136,24 @@ $users = User::find()->one();
             </li>
             <!--           меню Пользователь-->
             <li class="treeview">
-                <a href="#"><i class="fa  fa-file-archive-o"></i> <span>Пользотель</span>
+                <a href="#"><i class="fa  fa-user-plus"></i> <span>Пользотель</span>
                     <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?=\yii\helpers\Url::to(['user/index'])?>">Инфо пользователя</a></li>
+                </ul>
+            </li>
+            <!--           меню Контакты-->
+            <li class="treeview">
+                <a href="#"><i class="fa  fa-clone"></i> <span>Контакты</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?=\yii\helpers\Url::to(['contact/index'])?>">Меню контакты</a></li>
                 </ul>
             </li>
         </ul>

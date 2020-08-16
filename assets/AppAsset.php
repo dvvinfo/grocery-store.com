@@ -37,8 +37,8 @@ class AppAsset extends AssetBundle
         'js/jquery.flexslider.js',
 
         'js/minicart.js',
-        'waypoints.min.js',
-        'counterup.min.js',
+        'js/waypoints.min.js',
+        'js/counterup.min.js',
         'js/main.js',
     ];
     public $depends = [

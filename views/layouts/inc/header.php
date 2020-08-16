@@ -1,7 +1,11 @@
 <?php
 
+use app\modules\admin\models\Contact;
 use yii\bootstrap\Nav;
 use yii\helpers\Url; ?>
+<?php
+$contact = Contact::find()->one();
+?>
 <div class="agileits_header">
     <div class="w3l_offers">
         <a href="products.html">Today's special Offers !</a>
@@ -60,7 +64,7 @@ use yii\helpers\Url; ?>
         </ul>
     </div>
     <div class="w3l_header_right1">
-        <h2><a href="mail.html">Contact Us</a></h2>
+        <h2><a href="<?=Url::to(['pages/mail'])?>">Contact Us</a></h2>
     </div>
     <div class="clearfix"> </div>
 </div>
@@ -92,8 +96,8 @@ use yii\helpers\Url; ?>
         </div>
         <div class="w3ls_logo_products_left1">
             <ul class="phone_email">
-                <li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
-                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i><?= $contact->tel?></li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com"><?= $contact->email?></a></li>
             </ul>
         </div>
         <div class="clearfix"> </div>
